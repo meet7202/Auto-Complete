@@ -1,0 +1,16 @@
+package com.example.meetshah.autocorrectiondemo;
+
+import java.util.Comparator;
+
+/**
+ * Created by Meet Shah on 01-10-2016.
+ */
+public class LengthFirstComparator implements Comparator<String> {
+    @Override
+    public int compare(String o1, String o2) {
+        if (o1.length()!=o2.length()) {
+            return o1.length()-o2.length(); //overflow impossible since lengths are non-negative
+        }
+        return o1.compareTo(o2);
+    }
+}
